@@ -1,0 +1,455 @@
+
+/* =========================================
+   SAI RATHNA MULTI SPECIALITY HOSPITAL
+   Premium Warm Luxury Navbar
+========================================= */
+
+.sr-navbar {
+  --sr-walnut: #68452f;
+  --sr-walnut-dark: #4d3223;
+  --sr-text: #292722;
+  --sr-muted: #777168;
+  --sr-line: #e9e0d2;
+  --sr-accent: #b59a70;
+  --sr-ivory: #f7f3eb;
+  --sr-white: #ffffff;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid var(--sr-line);
+  color: var(--sr-text);
+  font-family: "Inter", "Segoe UI", sans-serif;
+  animation: srNavbarEnter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition:
+    box-shadow 300ms ease,
+    background-color 300ms ease,
+    border-color 300ms ease;
+}
+
+.sr-navbar.sr-navbar-scrolled {
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(41, 39, 34, 0.08);
+}
+
+.sr-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  width: min(calc(100% - 80px), 1440px);
+  min-height: 100px;
+  margin: 0 auto;
+}
+
+/* Brand */
+
+.sr-navbar .sr-brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 13px;
+  color: var(--sr-text);
+  text-decoration: none;
+  animation: srNavbarContent 650ms ease both;
+  animation-delay: 120ms;
+}
+
+.sr-brand-logo,
+.sr-brand-emblem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.sr-brand-logo {
+  display: block;
+  object-fit: contain;
+}
+
+.sr-brand-emblem {
+  color: var(--sr-walnut);
+  background: #eee5d8;
+  border: 1px solid #dfcfb8;
+  border-radius: 50%;
+}
+
+.sr-brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sr-brand-name {
+  color: var(--sr-walnut-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.7px;
+  white-space: nowrap;
+}
+
+.sr-brand-subtitle {
+  color: var(--sr-muted);
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 1.8px;
+  white-space: nowrap;
+}
+
+/* Desktop navigation */
+
+.sr-navbar .sr-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2.2vw, 35px);
+}
+
+.sr-navbar .sr-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  color: #6d675e;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 250ms ease;
+}
+
+.sr-navbar .sr-nav-link::after {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--sr-accent);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease;
+}
+
+.sr-navbar .sr-nav-link:hover,
+.sr-navbar .sr-nav-link-active {
+  color: var(--sr-walnut);
+}
+
+.sr-navbar .sr-nav-link:hover::after,
+.sr-navbar .sr-nav-link-active::after {
+  transform: scaleX(1);
+}
+
+/* Navbar CTA — intentionally unique class */
+
+.sr-navbar .sr-navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 19px;
+  border: 1px solid var(--sr-walnut);
+  border-radius: 2px;
+  background: var(--sr-walnut);
+  color: var(--sr-white);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease,
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.sr-navbar .sr-navbar-cta:hover {
+  background: var(--sr-walnut-dark);
+  border-color: var(--sr-walnut-dark);
+  color: var(--sr-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(77, 50, 35, 0.16);
+}
+
+.sr-navbar .sr-navbar-cta svg {
+  flex-shrink: 0;
+  transition: transform 220ms ease;
+}
+
+.sr-navbar .sr-navbar-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.sr-navbar .sr-mobile-appointment {
+  display: none;
+}
+
+/* Mobile menu toggle */
+
+.sr-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--sr-line);
+  border-radius: 2px;
+  background: #fff;
+  color: var(--sr-walnut);
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.sr-menu-toggle:hover {
+  background: var(--sr-ivory);
+  border-color: #d6c3a8;
+  color: var(--sr-walnut-dark);
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .sr-navbar-inner {
+    width: calc(100% - 48px);
+    gap: 22px;
+  }
+
+  .sr-navbar .sr-brand {
+    gap: 10px;
+  }
+
+  .sr-brand-logo,
+  .sr-brand-emblem {
+    width: 54px;
+    height: 54px;
+  }
+
+  .sr-brand-name {
+    font-size: 24px;
+  }
+
+  .sr-brand-subtitle {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .sr-navbar .sr-nav-links {
+    gap: 17px;
+  }
+
+  .sr-navbar .sr-nav-link {
+    font-size: 12px;
+  }
+
+  .sr-navbar .sr-navbar-cta {
+    min-height: 45px;
+    padding: 0 14px;
+    gap: 8px;
+    font-size: 11px;
+  }
+}
+
+/* Mobile navigation */
+
+@media (max-width: 860px) {
+  .sr-navbar-inner {
+    position: relative;
+    width: calc(100% - 40px);
+    min-height: 84px;
+    gap: 16px;
+  }
+
+  .sr-brand-logo,
+  .sr-brand-emblem {
+    width: 52px;
+    height: 52px;
+  }
+
+  .sr-brand-name {
+    font-size: 24px;
+  }
+
+  .sr-brand-subtitle {
+    font-size: 8px;
+    letter-spacing: 1.35px;
+  }
+
+  .sr-menu-toggle {
+    display: inline-flex;
+  }
+
+  .sr-navbar .sr-desktop-appointment {
+    display: none;
+  }
+
+  .sr-navbar .sr-nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 12px 24px 24px;
+    background: #fff;
+    border-bottom: 1px solid var(--sr-line);
+    box-shadow: 0 16px 24px rgba(41, 39, 34, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity 250ms ease,
+      transform 250ms ease,
+      visibility 250ms ease;
+  }
+
+  .sr-navbar .sr-nav-links.sr-nav-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .sr-navbar .sr-nav-link {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 2px;
+    border-bottom: 1px solid var(--sr-line);
+    color: var(--sr-text);
+    font-size: 14px;
+  }
+
+  .sr-navbar .sr-nav-link::after {
+    bottom: 0;
+    width: 36px;
+  }
+
+  .sr-navbar .sr-mobile-appointment {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: 20px;
+    padding: 0 18px;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 420px) {
+  .sr-navbar-inner {
+    width: calc(100% - 28px);
+    min-height: 76px;
+    gap: 10px;
+  }
+
+  .sr-navbar .sr-brand {
+    gap: 9px;
+  }
+
+  .sr-brand-logo,
+  .sr-brand-emblem {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sr-brand-emblem svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .sr-brand-name {
+    font-size: 21px;
+    letter-spacing: -0.5px;
+  }
+
+  .sr-brand-subtitle {
+    font-size: 7px;
+    letter-spacing: 1.1px;
+  }
+
+  .sr-menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sr-navbar .sr-nav-links {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+/* Accessibility */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+.sr-navbar a:focus-visible,
+.sr-menu-toggle:focus-visible {
+  outline: 2px solid var(--sr-accent);
+  outline-offset: 4px;
+}
+
+/* Entrance animations */
+
+@keyframes srNavbarEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes srNavbarContent {
+  from {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sr-navbar,
+  .sr-navbar .sr-brand,
+  .sr-navbar .sr-nav-link,
+  .sr-navbar .sr-nav-link::after,
+  .sr-navbar .sr-navbar-cta,
+  .sr-navbar .sr-navbar-cta svg,
+  .sr-navbar .sr-menu-toggle,
+  .sr-navbar .sr-nav-links {
+    animation: none !important;
+    transition: none !important;
+  }
+}

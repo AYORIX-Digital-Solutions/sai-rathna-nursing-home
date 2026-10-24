@@ -1,0 +1,465 @@
+
+/* =========================================
+   SPECIALITIES — PREMIUM ANIMATED SECTION
+========================================= */
+
+.sr-specialities {
+  --sp-walnut: #68452f;
+  --sp-walnut-dark: #4d3223;
+  --sp-text: #292722;
+  --sp-muted: #777168;
+  --sp-gold: #b59a70;
+  --sp-ivory: #f7f3eb;
+  --sp-line: #e9e0d2;
+
+  position: relative;
+  padding: 105px 6.5% 95px;
+  overflow: hidden;
+  background: var(--sp-ivory);
+  color: var(--sp-text);
+}
+
+.sr-specialities *,
+.sr-specialities *::before,
+.sr-specialities *::after {
+  box-sizing: border-box;
+}
+
+.sr-specialities-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Scroll reveal */
+
+.sr-speciality-reveal {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.65, 0.3, 1),
+    transform 700ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.sr-speciality-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Heading */
+
+.sr-specialities-top {
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+  align-items: end;
+  gap: 55px;
+  margin-bottom: 50px;
+}
+
+.sr-specialities-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 22px;
+  color: var(--sp-walnut);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.sr-specialities-eyebrow span {
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--sp-gold);
+}
+
+.sr-specialities-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 5.4vw, 72px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.sr-specialities-title em {
+  color: var(--sp-walnut);
+  font-weight: 400;
+}
+
+.sr-specialities-intro {
+  max-width: 380px;
+  justify-self: end;
+  margin: 0 0 6px;
+  color: var(--sp-muted);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+/* Cards grid */
+
+.sr-specialities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #ded4c5;
+  border-left: 1px solid #ded4c5;
+}
+
+/* Individual card */
+
+.sr-speciality-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 275px;
+  flex-direction: column;
+  padding: 27px 26px 22px;
+  overflow: hidden;
+  border-right: 1px solid #ded4c5;
+  border-bottom: 1px solid #ded4c5;
+  background: rgba(255, 255, 255, 0.58);
+  transition:
+    background-color 300ms ease,
+    box-shadow 300ms ease,
+    transform 300ms ease,
+    border-color 300ms ease;
+  transition-delay: 0ms, 0ms, 0ms, 0ms;
+}
+
+/* Cards enter one after another */
+
+.sr-specialities-grid .sr-speciality-card {
+  transition-delay: calc(var(--card-index, 0) * 75ms);
+}
+
+.sr-speciality-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--sp-gold);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 350ms ease;
+}
+
+.sr-speciality-card:hover {
+  z-index: 1;
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(77, 50, 35, 0.07);
+}
+
+.sr-speciality-card:hover::before {
+  transform: scaleX(1);
+}
+
+.sr-speciality-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.sr-speciality-number {
+  color: #a29a8e;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.sr-speciality-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--sp-ivory);
+  color: var(--sp-walnut);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    transform 300ms ease;
+}
+
+.sr-speciality-card:hover .sr-speciality-icon {
+  background: var(--sp-walnut);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.sr-speciality-card-content {
+  margin-top: 28px;
+}
+
+.sr-speciality-card-content h3 {
+  margin: 0 0 12px;
+  color: var(--sp-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.35px;
+}
+
+.sr-speciality-card-content p {
+  max-width: 300px;
+  margin: 0;
+  color: var(--sp-muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.sr-speciality-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.sr-speciality-card-line {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: #d8c8b3;
+  transition:
+    width 300ms ease,
+    background-color 300ms ease;
+}
+
+.sr-speciality-arrow {
+  color: #a49a8d;
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.sr-speciality-card:hover .sr-speciality-card-line {
+  width: 48px;
+  background: var(--sp-walnut);
+}
+
+.sr-speciality-card:hover .sr-speciality-arrow {
+  color: var(--sp-walnut);
+  transform: translate(3px, -3px);
+}
+
+/* Bottom note */
+
+.sr-specialities-note {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 28px;
+  padding: 19px 0 0;
+}
+
+.sr-specialities-note-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  border: 1px solid #ded4c5;
+  color: var(--sp-walnut);
+}
+
+.sr-specialities-note p {
+  margin: 0;
+  color: var(--sp-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.sr-specialities-note a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--sp-walnut);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sr-specialities-note a svg {
+  transition: transform 200ms ease;
+}
+
+.sr-specialities-note a:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .sr-specialities {
+    padding: 80px 5.5% 75px;
+  }
+
+  .sr-specialities-top {
+    grid-template-columns: 1fr 0.7fr;
+    gap: 28px;
+    margin-bottom: 38px;
+  }
+
+  .sr-specialities-title {
+    font-size: clamp(43px, 6vw, 58px);
+    letter-spacing: -1.5px;
+  }
+
+  .sr-specialities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sr-speciality-card {
+    min-height: 260px;
+    padding: 24px 22px 20px;
+  }
+
+  .sr-specialities-grid .sr-speciality-card {
+    transition-delay: 0ms;
+  }
+
+  .sr-speciality-card-content h3 {
+    font-size: 21px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .sr-specialities {
+    padding: 66px 6% 60px;
+  }
+
+  .sr-specialities-top {
+    grid-template-columns: 1fr;
+    gap: 17px;
+    margin-bottom: 30px;
+  }
+
+  .sr-specialities-eyebrow {
+    margin-bottom: 18px;
+    font-size: 9px;
+    letter-spacing: 1.6px;
+  }
+
+  .sr-specialities-eyebrow span {
+    width: 24px;
+  }
+
+  .sr-specialities-title {
+    font-size: clamp(44px, 11vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -1.7px;
+  }
+
+  .sr-specialities-intro {
+    justify-self: start;
+    max-width: 390px;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .sr-specialities-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sr-speciality-card {
+    min-height: 0;
+    padding: 22px 20px 19px;
+  }
+
+  .sr-speciality-card-content {
+    margin-top: 18px;
+  }
+
+  .sr-speciality-card-content h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+  }
+
+  .sr-speciality-card-content p {
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.85;
+  }
+
+  .sr-speciality-card-bottom {
+    padding-top: 17px;
+  }
+
+  .sr-specialities-note {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin-top: 20px;
+  }
+
+  .sr-specialities-note-icon {
+    width: 33px;
+    height: 33px;
+  }
+
+  .sr-specialities-note p {
+    flex: 1;
+    min-width: 0;
+    padding-top: 1px;
+    font-size: 11px;
+  }
+
+  .sr-specialities-note a {
+    margin-left: 44px;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 360px) {
+  .sr-specialities {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .sr-speciality-card {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .sr-speciality-card-content h3 {
+    font-size: 20px;
+  }
+}
+
+/* Accessibility */
+
+.sr-specialities a:focus-visible {
+  outline: 2px solid var(--sp-walnut);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sr-speciality-reveal,
+  .sr-speciality-card,
+  .sr-speciality-card::before,
+  .sr-speciality-icon,
+  .sr-speciality-card-line,
+  .sr-speciality-arrow,
+  .sr-specialities-note a svg {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .sr-speciality-reveal {
+    transition-delay: 0ms !important;
+  }
+}

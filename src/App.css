@@ -1,0 +1,38 @@
+
+/* Global application layout */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent accidental horizontal overflow */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* Responsive media */
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Accessible keyboard focus */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #b59a70;
+  outline-offset: 4px;
+}
